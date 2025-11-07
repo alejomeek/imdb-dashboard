@@ -275,7 +275,7 @@ with tab2:
                 color=top_genres.values,
                 color_continuous_scale='Viridis'
             )
-            fig_genres_bar.update_layout(height=400, showlegend=False)
+            fig_genres_bar.update_layout(height=400, showlegend=False, yaxis={'categoryorder': 'total ascending'})
             st.plotly_chart(fig_genres_bar, use_container_width=True)
         else:
             st.warning("⚠️ No hay géneros que cumplan los filtros seleccionados.")
@@ -298,7 +298,7 @@ with tab2:
                 color=genre_ratings['avg_rating'],
                 color_continuous_scale='RdYlGn'
             )
-            fig_genre_rating.update_layout(height=400, showlegend=False)
+            fig_genre_rating.update_layout(height=400, showlegend=False, yaxis={'categoryorder': 'total ascending'})
             st.plotly_chart(fig_genre_rating, use_container_width=True)
         else:
             st.warning("⚠️ No hay géneros que cumplan los filtros seleccionados.")
@@ -380,7 +380,7 @@ with tab3:
                 color=top_people_count.values,
                 color_continuous_scale='Blues'
             )
-            fig_top_count.update_layout(height=500, showlegend=False)
+            fig_top_count.update_layout(height=500, showlegend=False, yaxis={'categoryorder': 'total ascending'})
             st.plotly_chart(fig_top_count, use_container_width=True)
         else:
             st.warning(f"⚠️ No hay {title.lower()} que cumplan los filtros seleccionados. Intenta reducir el rating mínimo.")
@@ -411,7 +411,7 @@ with tab3:
                 color='avg_rating',
                 color_continuous_scale='RdYlGn'
             )
-            fig_top_rating.update_layout(height=500, showlegend=False)
+            fig_top_rating.update_layout(height=500, showlegend=False, yaxis={'categoryorder': 'total ascending'})
             st.plotly_chart(fig_top_rating, use_container_width=True)
         else:
             st.warning(f"⚠️ No hay {title.lower()} con al menos {min_works} trabajos que cumplan los filtros seleccionados. Intenta reducir el rating mínimo o el número de trabajos.")
@@ -446,7 +446,7 @@ with tab3:
                     color='count',
                     color_continuous_scale='Purples'
                 )
-                fig_decade.update_layout(height=300, showlegend=False)
+                fig_decade.update_layout(height=300, showlegend=False, yaxis={'categoryorder': 'total ascending'})
                 st.plotly_chart(fig_decade, use_container_width=True)
             else:
                 st.warning(f"⚠️ No hay datos para la década de {int(selected_decade)}")
@@ -487,7 +487,7 @@ with tab4:
                 color=top_countries.values,
                 color_continuous_scale='Teal'
             )
-            fig_countries.update_layout(height=600, showlegend=False)
+            fig_countries.update_layout(height=600, showlegend=False, yaxis={'categoryorder': 'total ascending'})
             st.plotly_chart(fig_countries, use_container_width=True)
         else:
             st.warning("⚠️ No hay países que cumplan los filtros seleccionados.")
@@ -518,7 +518,7 @@ with tab4:
                 color='avg_rating',
                 color_continuous_scale='RdYlGn'
             )
-            fig_country_ratings.update_layout(height=600, showlegend=False)
+            fig_country_ratings.update_layout(height=600, showlegend=False, yaxis={'categoryorder': 'total ascending'})
             st.plotly_chart(fig_country_ratings, use_container_width=True)
         else:
             st.warning(f"⚠️ No hay países con al menos {min_productions} producciones que cumplan los filtros.")
@@ -594,7 +594,7 @@ with tab5:
             color_continuous_scale='Viridis',
             hover_data=['startYear', 'numVotes']
         )
-        fig_top_series.update_layout(height=600, showlegend=False)
+        fig_top_series.update_layout(height=600, showlegend=False, yaxis={'categoryorder': 'total ascending'})
         st.plotly_chart(fig_top_series, use_container_width=True)
     else:
         st.warning("⚠️ No hay series que cumplan los filtros seleccionados.")
@@ -634,7 +634,7 @@ with tab5:
                     color='num_seasons',
                     color_continuous_scale='Blues'
                 )
-                fig_seasons.update_layout(height=500, showlegend=False)
+                fig_seasons.update_layout(height=500, showlegend=False, yaxis={'categoryorder': 'total ascending'})
                 st.plotly_chart(fig_seasons, use_container_width=True)
             else:
                 st.warning("⚠️ No hay suficientes datos para mostrar series por temporadas.")
@@ -654,7 +654,7 @@ with tab5:
                     color='num_episodes',
                     color_continuous_scale='Greens'
                 )
-                fig_episodes.update_layout(height=500, showlegend=False)
+                fig_episodes.update_layout(height=500, showlegend=False, yaxis={'categoryorder': 'total ascending'})
                 st.plotly_chart(fig_episodes, use_container_width=True)
             else:
                 st.warning("⚠️ No hay suficientes datos para mostrar series por episodios.")
